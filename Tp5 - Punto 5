@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto 5</title>
+</head>
+<body>
+    <h1> FORMULARIO </h1>
+    <form id="formulario" action="">
+        <label for="Nombre">Nombre</label>
+        <input type="text" id="Nombre" placeholder="Nombre:" > 
+        <label for="Apellido">Apellido</label>
+        <input type="text" id="Apellido" placeholder="Apellido:" >
+
+        <p>Sexo</p>
+        <input type="radio" id="Hombre" name="genero" value="Hombre">
+        <label for="Hombre">Hombre</label><br>
+        <input type="radio" id="mujer" name="genero" value="Mujer">
+        <label for="mujer">Mujer</label><br>
+
+        <div>
+            <p>Edad</p>
+            <input type="radio" id="edad0-15" name="edad" value="0-15">
+            <label for="edad0-15">0-15</label>
+            <input type="radio" id="edad15-23" name="edad" value="15-23">
+            <label for="edad15-23">15-23</label>
+            <input type="radio" id="edad23-35" name="edad" value="23-35">
+            <label for="edad23-35">23-35</label>
+            <input type="radio" id="edad35-60" name="edad" value="35-60">
+            <label for="edad35-60">35-60</label>
+            <input type="radio" id="edad60" name="edad" value=">60">
+            <label for="edad60">>60</label>
+            <input type="radio" id="edad65" name="edad" value=">65">
+            <label for="edad65">>65</label>
+        </div>
+        <button type="submit">Enviar</button>
+    </form>
+
+    <script>
+        var formulario = document.getElementById("formulario");
+
+        formulario.addEventListener("submit", function(event) {
+            event.preventDefault(); 
+            var nombre = document.getElementById("Nombre").value.trim();
+            var apellido = document.getElementById("Apellido").value.trim();
+            var genero = document.querySelector('input[name="genero"]:checked');
+            var edad = document.querySelector('input[name="edad"]:checked');
+
+            if (nombre === "") {
+                alert("Por favor, ingrese un nombre.");
+                return; 
+            }
+            if (apellido === "") {
+                alert("Por favor, ingrese un apellido.");
+                return; 
+            }
+            if (!genero) {
+                alert("Por favor, seleccione un género.");
+                return; 
+            }
+            if (!edad) {
+                alert("Por favor, seleccione una edad.");
+                return; 
+            }
+            var mensaje = "";
+            if (genero.value === "Hombre" && edad.value === ">65") {
+                mensaje = "¡Puede jubilarse!";
+            } else if (genero.value === "Mujer" && edad.value === ">60" && ">65") {
+                mensaje = "¡Puede jubilarse!";
+            } else {
+                mensaje = "No puede jubilarse aún.";
+            }
+            alert(mensaje);
+            formulario.submit();
+        });
+    </script>
+</body>
+</html>
