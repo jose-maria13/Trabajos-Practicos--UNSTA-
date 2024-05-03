@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto 1</title>
+</head>
+<body>
+    <h1> Edad de la persona </h1>
+    
+    
+    <script>
+    var edad = parseInt(prompt("Ingrese la edad de la persona:"))
+    if (edad >= 18){
+        document.write("Si puede conducir, la persona tiene " + edad +" Anios")
+    }
+    else if (edad < 18){
+        document.write("No puede conducir, la persona tiene " + edad +" Anios")
+    }
+    </script>
+</body>
+</html> 
