@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Punto 4</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+        }
+        body{
+         display: flex;
+        }
+        #general{
+            margin: auto;
+            width: 960px;
+            height: 800px;
+            background-color: brown;
+            cursor: pointer;
+        
+        }
+        #cuadrado1 {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(245, 242, 242);
+            float: left;
+        }
+        #cuadrado2 {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(240, 156, 229);
+            float: left;
+        }
+        #cuadrado3 {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(60, 58, 58);
+            float: left;
+        }
+        #cuadrado4 {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(120, 134, 115);
+            float: left;
+        }
+        #cuadrado5 {
+            width: 150px;
+            height: 150px;
+            background-color: rgb(36, 209, 236);
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="general">
+    <div id="cuadrado1"></div>
+    <div id="cuadrado2"></div>
+    <div id="cuadrado3"></div>
+    <div id="cuadrado4"></div>
+    <div id="cuadrado5"></div>
+</div>
+    
+    <script>
+        const fondo="brown"
+        document.getElementById('cuadrado1').addEventListener("mouseenter",enter)
+        document.getElementById('cuadrado1').addEventListener("mouseleave",leave)
+        document.getElementById('cuadrado2').addEventListener("mouseenter",enter2)
+        document.getElementById('cuadrado2').addEventListener("mouseleave",leave)
+        document.getElementById('cuadrado3').addEventListener("mouseenter",enter3)
+        document.getElementById('cuadrado3').addEventListener("mouseleave",leave)
+        document.getElementById('cuadrado4').addEventListener("mouseenter",enter4)
+        document.getElementById('cuadrado4').addEventListener("mouseleave",leave)
+        document.getElementById('cuadrado5').addEventListener("mouseenter",enter5)
+        document.getElementById('cuadrado5').addEventListener("mouseleave",leave)
+        function enter(){
+            document.getElementById('general').style.background = "rgb(245, 242, 242)";
+        }
+
+        function enter2(){
+            document.getElementById('general').style.background = "rgb(240, 156, 229)";
+        }
+        function enter3(){
+            document.getElementById('general').style.background = "rgb(60, 58, 58)";
+        }
+        function enter4(){
+            document.getElementById('general').style.background = "rgb(120, 134, 115)";
+        }
+        function enter5(){
+            document.getElementById('general').style.background = "rgb(36, 209, 236)";
+        }
+        function leave(){
+            document.getElementById('general').style.background = fondo;
+        }
+    </script>
+</body>
+</html>
